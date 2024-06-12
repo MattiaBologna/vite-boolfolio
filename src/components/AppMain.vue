@@ -2,23 +2,19 @@
     <div>
         <h2>Projects</h2>
         <ul class="list-unstyled">
-            <li v-for="project in projects" :key="project.id">
-                <h2>{{ project.title }}</h2>
-                <p>{{ project.description }}</p>
-                <div class="d-flex gap-2">
-                    <div v-for="technology in project.technologies" class="btn btn-dark">
-                        {{ technology.name }}
-                    </div>
-                </div>
-            </li>
+            <ProjectCard v-for="project in projects" key="project.id" :project="project" />
         </ul>
     </div>
 </template>
 
 <script>
 import axios from 'axios'
+import ProjectCard from './ProjectCard.vue'
 
 export default {
+    components: {
+        ProjectCard
+    },
     data() {
         return {
             projects: []
