@@ -7,5 +7,6 @@ import './scss/style.scss'
 import * as bootstrap from 'bootstrap'
 
 import App from './App.vue'
+import { router } from './js/router'
 
-createApp(App).mount('#app')
+createApp(App).use(router).mount('#app')

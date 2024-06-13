@@ -1,18 +1,18 @@
 <template>
-  <h1 class="p-3">
-    {{ message }}
-  </h1>
-  <div class="container">
-    <AppMain />
-  </div>
+  <NavBar />
+  <main>
+    <RouterView />
+  </main>
 </template>
 
 <script>
 import AppMain from './components/AppMain.vue'
+import NavBar from './components/NavBar.vue';
 
 export default {
   components: {
     AppMain,
+    NavBar
   },
   data() {
     return {
