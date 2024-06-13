@@ -1,8 +1,10 @@
 <template>
-  <h1 class="container">
+  <h1 class="p-3">
     {{ message }}
   </h1>
-  <AppMain />
+  <div class="container">
+    <AppMain />
+  </div>
 </template>
 
 <script>
@@ -14,7 +16,7 @@ export default {
   },
   data() {
     return {
-      message: 'Ciao mondo'
+      message: 'Boolfolio'
     }
   }
 }
