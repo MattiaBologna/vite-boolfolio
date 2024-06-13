@@ -1,15 +1,21 @@
 <template>
-    <header class="py-2 bg-grey">
+    <header class="py-5 bg-body-tertiary mb-4">
         <div class="container">
             <div class="d-flex justify-content-between">
-                <RouterLink to="/">Boolfolio</RouterLink>
+                <RouterLink class="navbar-brand fs-1" :to="{ name: 'home' }">Boolfolio</RouterLink>
                 <nav class="d-flex gap-3">
-                    <RouterLink :class="$route.fullPath === '/' ? 'text-danger' : ''" :to="{ name: 'home' }">Home
+                    <RouterLink :class="$route.fullPath === '/' ? 'text-danger' : ''" class="text-warning nav-link fs-4"
+                        :to="{ name: 'home' }">
+                        Home
                     </RouterLink>
                     <RouterLink :class="$route.fullPath === '/portfolio' ? 'text-danger' : ''"
-                        :to="{ name: 'portfolio' }">Portfolio</RouterLink>
-                    <RouterLink :class="$route.fullPath === '/contact' ? 'text-danger' : ''" :to="{ name: 'contact' }">
-                        Contact</RouterLink>
+                        class="text-warning nav-link fs-4" :to="{ name: 'portfolio' }">
+                        Portfolio
+                    </RouterLink>
+                    <RouterLink :class="$route.fullPath === '/contact' ? 'text-danger' : ''"
+                        class="text-warning nav-link fs-4" :to="{ name: 'contact' }">
+                        Contact
+                    </RouterLink>
                 </nav>
             </div>
         </div>
