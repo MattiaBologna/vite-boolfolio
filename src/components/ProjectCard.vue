@@ -3,11 +3,7 @@
         <div class="project-infos">
             <h2>{{ project.title }}</h2>
             <p>{{ project.description }}</p>
-            <div class="d-flex gap-2">
-                <div v-for="technology in project.technologies" class="btn btn-dark">
-                    {{ technology.name }}
-                </div>
-            </div>
+            <ProjectTags :technologies="project.technologies" />
         </div>
         <router-link :to="{ name: 'projects.show', params: { slug: project.slug } }"
             class="btn btn-primary project-detail-btn">Detail</router-link>
@@ -15,7 +11,12 @@
 </template>
 
 <script>
+import ProjectTags from './ProjectTags.vue';
+
 export default {
+    components: {
+        ProjectTags
+    },
     props: {
         project: {
             type: Object,

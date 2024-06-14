@@ -7,23 +7,24 @@
             <h2>{{ project.title }}</h2>
             <p>Description: {{ project.description }}</p>
             <a class="link-danger link-underline link-underline-opacity-0" href="{{ project.link }}">Github link</a>
-            <div class="d-flex gap-2 mt-3">
-                <div v-for="technology in project.technologies" class="btn btn-secondary text-white">
-                    {{ technology.name }}
-                </div>
-            </div>
+            <ProjectTags :technologies="project.technologies" />
+
         </div>
     </template>
 </template>
 
 <script>
 import axios from 'axios';
+import ProjectTags from '../components/ProjectTags.vue'
 
 export default {
     data() {
         return {
             project: null
         }
+    },
+    components: {
+        ProjectTags
     },
     props: {
         slug: {
