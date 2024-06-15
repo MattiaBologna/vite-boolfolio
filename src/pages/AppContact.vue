@@ -14,6 +14,7 @@
                 <label for="message" class="form-lable">Message</label>
                 <input type="text" name="message" class="form-control" id="message" placeholder="Insert message">
             </div>
+            <button class="btn btn-primary">Send</button>
         </form>
     </div>
 </template>
